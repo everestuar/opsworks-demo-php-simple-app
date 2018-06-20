@@ -4,21 +4,21 @@
 
 <form action="{{ app.request.baseUrl ~ '/add' }}" method="post" class="form-horizontal" enctype="multipart/form-data">
   <div class="control-group">
-    <label class="control-label" for="thoughtMessage">Your Thought</label>
+    <label class="control-label" for="thoughtMessage">Tu Opinión</label>
     <div class="controls">
         <textarea rows="3" name="thoughtMessage" id="thoughtMessage" class="input-xxlarge"></textarea>
     </div>
   </div>
   <div class="control-group">
-    <label class="control-label" for="thoughtAuthor">Your Name</label>
+    <label class="control-label" for="thoughtAuthor">Tu Nombre</label>
     <div class="controls">
       <input type="text" name="thoughtAuthor" id="thoughtAuthor" class="input-xxlarge" maxlength="63">
     </div>
   </div>
   <div class="control-group">
     <div class="controls">
-      <button type="submit" class="btn btn-primary"><b class="icon-ok icon-white"></b> Submit Your Thought</button>
-      <a href="{{ app.request.baseUrl ~ '/' }}" class="btn"><b class="icon-chevron-left"></b> Go Back</a>
+      <button type="submit" class="btn btn-primary"><b class="icon-ok icon-white"></b> Envia Tu Opinión</button>
+      <a href="{{ app.request.baseUrl ~ '/' }}" class="btn"><b class="icon-chevron-left"></b> Regresar</a>
     </div>
   </div>
 </form>
