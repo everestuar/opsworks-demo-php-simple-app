@@ -26,7 +26,7 @@ $app->match('/', function () use ($app) {
     $thoughts = $query->execute() ? $query->fetchAll(PDO::FETCH_ASSOC) : array();
 
     return $app['twig']->render('index.twig', array(
-        'title'    => 'Your Thoughts',
+        'title'    => 'Tu Opinión',
         'thoughts' => $thoughts,
     ));
 });
@@ -49,14 +49,14 @@ $app->match('/add', function (Request $request) use ($app) {
                     ':author'  => $author,
                 );
                 if (!$query->execute($data)) {
-                    throw new \RuntimeException('Saving your thought to the database failed.');
+                    throw new \RuntimeException('Error al guardar tu opinión en la Base de Datos.');
                 }
             } else {
-                throw new \InvalidArgumentException('Sorry, The format of your thought was not valid.');
+                throw new \InvalidArgumentException('Lo sentimos, el formato no es válido.');
             }
 
             // Display a success message
-            $alert = array('type' => 'success', 'message' => 'Thank you for sharing your thought.');
+            $alert = array('type' => 'success', 'message' => 'Gracias por compartir tu opinión.');
         } catch (Exception $e) {
             // Display an error message
             $alert = array('type' => 'error', 'message' => $e->getMessage());
@@ -64,7 +64,7 @@ $app->match('/add', function (Request $request) use ($app) {
     }
 
     return $app['twig']->render('add.twig', array(
-        'title' => 'Share Your Thought!',
+        'title' => '¡Comparte tu opinión!',
         'alert' => $alert,
     ));
 });
